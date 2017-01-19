@@ -34,7 +34,7 @@ fi
 
 if [ "true" = "${USE_S3_BUCKET}" ]
 then
-        rm -f /tmp/${S3_BUCKET}_cache
+        rm -fr /tmp/${S3_BUCKET}_cache
         mkdir -p /tmp/${S3_BUCKET}_cache
         mkdir -p ${APP_DIR}/${S3_BUCKET_MOUNTPOINT}
 	export AWSACCESSKEYID=${S3_BUCKET_ACCCESSKEY}
