@@ -44,7 +44,9 @@ RUN     export APACHE_LOG_DIR=/var/log/apache2 && \
         a2enmod ssl && \
         rm /var/www/html/index.html && \
         mv -v ${WORKDIR}/000-default.conf /etc/apache2/sites-available/000-default.conf && \
-        mv -v ${WORKDIR}/000-default-ssl.conf /etc/apache2/sites-available/000-default-ssl.conf
+        mv -v ${WORKDIR}/000-default-ssl.conf /etc/apache2/sites-available/000-default-ssl.conf && \
+        mkdir -p /etc/apache2/certs/ && \
+        cp cert.* /etc/apache2/certs/
 
 EXPOSE 80
 EXPOSE 443
