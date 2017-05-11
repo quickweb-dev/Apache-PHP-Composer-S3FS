@@ -20,6 +20,7 @@ RUN     export APACHE_LOG_DIR=/var/log/apache2 && \
                 php7.0-curl \
                 git \
                 wget \
+                cron \
                 ${S3FS_BUILD_DEPS} && \
         wget https://getcomposer.org/download/1.2.0/composer.phar && \
         mv ${WORKDIR}/composer.phar /usr/local/bin/composer && \

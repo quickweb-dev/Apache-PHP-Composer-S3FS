@@ -48,6 +48,9 @@ then
 	${APP_DIR}/docker/update-db.sh
 fi
 
+# Start the cron service
+exec cron -f
 
 # And start apache in the foreground
 exec apachectl -DFOREGROUND -e info
+
