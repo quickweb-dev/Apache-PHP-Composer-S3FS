@@ -49,7 +49,7 @@ then
 fi
 
 # Start cron in background
-service cron start > /dev/null
+/etc/init.d/cron start > /dev/null
 
 # And start apache in the foreground
 exec apachectl -DFOREGROUND -e info
