@@ -13,7 +13,7 @@ ${APP_DIR}/docker/check-env.php
 a2ensite 000-default-ssl
 
 # Apache gets grumpy about PID files pre-existing
-rm -f /usr/local/apache2/logs/httpd.pid
+rm -f /var/run/apache2.pid
 
 # Apache gets grumpy about server-name not beeing set:
 echo "ServerName ${FQDN}" > /etc/apache2/conf-available/fqdn.conf
