@@ -49,8 +49,16 @@ then
 fi
 
 # Start cron in background
-/etc/init.d/cron start > /dev/null
 
+CRONTAB=${APP_DIR}/crontab
+if [ -f ${CRONTAB} ]
+then
+   cp ${CRONTAB} /etc/cron.d/global_crontab
+fi
+
+env >> /etc/environment
+cp cli-php.ini /etc/php/7.0/cli/conf.d/
+/etc/init.d/cron start > /dev/null
 # And start apache in the foreground
 exec apachectl -DFOREGROUND -e info
 
