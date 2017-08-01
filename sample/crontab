@@ -1,0 +1,2 @@
+* * * * * www-data php ${APP_DIR}/cron-job.php >> ${APP_DIR}/${APP_LOGS_DIR}/cron-job.log
+
