@@ -42,6 +42,11 @@ then
 	s3fs ${S3_BUCKET} ${APP_DIR}/${S3_BUCKET_MOUNTPOINT} -o endpoint=${S3_BUCKET_ENDPOINT} -o allow_other -o use_cache=/tmp/${S3_BUCKET}_cache -o nonempty
 fi
 
+if [ -f ${APP_DIR}/docker/setup_prerequisites.sh ]
+then
+	${APP_DIR}/docker/setup_prerequisites.sh
+fi
+
 # Update the database.
 if [ "true" = "${UPDATE_DB}" ]
 then
